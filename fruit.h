@@ -3,7 +3,7 @@
 
 #include <QGraphicsRectItem>
 
-class Fruit: public QGraphicsRectItem{
+class Fruit: public QObject, public QGraphicsRectItem{
 public:
     Fruit();
 };

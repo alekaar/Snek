@@ -1,10 +1,12 @@
 #include "player.h"
+#include "fruit.h"
 #include <QDebug>
 #include <QKeyEvent>
 #include <QTimer>
+#include <QGraphicsScene>
 
 Player::Player(){
-    setRect(0, 0, 100, 100);
+    setRect(0, 0, 10, 10);
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this,SLOT(move()));
     timer->start(50);
@@ -33,6 +35,18 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 void Player::move()
 {
+    QList<QGraphicsItem *> coll = collidingItems();
+
+    //check for collision
+    for(int i = 0; i < coll.size(); i++){
+        if(typeid(*coll[i]) == typeid(Fruit)){
+            scene()->removeItem(coll[i]);
+            delete coll[i];
+            Fruit *fruit = new Fruit();
+            scene()->addItem(fruit);
+        }
+    }
+
     if(d == left && pos().x() > 0){
         setPos(x()-10, y());
     }
