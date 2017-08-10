@@ -4,9 +4,12 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include <QGraphicsScene>
+#include "game.h"
+
+extern Game *game;
 
 Player::Player(){
-    setRect(0, 0, 10, 10);
+    setRect(0, 0, w, h);
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this,SLOT(move()));
     timer->start(50);
@@ -48,15 +51,15 @@ void Player::move()
     }
 
     if(d == left && pos().x() > 0){
-        setPos(x()-10, y());
+        setPos(x()-w, y());
     }
-    else if(d == right && pos().x() + 100 < 800){
-        setPos(x()+10, y());
+    else if(d == right && pos().x() + w < game->getWidth()){
+        setPos(x()+w, y());
     }
-    else if(d == up){
-        setPos(x(), y()-10);
+    else if(d == up && pos().y() > 0){
+        setPos(x(), y()-h);
     }
-    else if(d == down){
-        setPos(x(), y()+10);
+    else if(d == down && pos().y() + h < game->getHeight()){
+        setPos(x(), y()+h);
     }
 }

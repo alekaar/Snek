@@ -14,8 +14,8 @@ public slots:
     void move();
 private:
     enum Player::Dir d;
-    int w;
-    int h;
+    int w = 10;
+    int h = 10;
 
 };
 

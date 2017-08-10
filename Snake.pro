@@ -26,11 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     player.cpp \
-    fruit.cpp
+    fruit.cpp \
+    score.cpp \
+    game.cpp
 
 HEADERS += \
     player.h \
-    fruit.h
+    fruit.h \
+    score.h \
+    game.h
 
 FORMS +=
 
