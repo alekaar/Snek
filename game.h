@@ -7,6 +7,7 @@
 #include <QGraphicsScene>
 #include "player.h"
 #include "fruit.h"
+#include "score.h"
 #include <QGraphicsView>
 
 class Game: public QGraphicsView

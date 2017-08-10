@@ -1,5 +1,7 @@
 #include "game.h"
 
+Score *score;
+
 Game::Game(QWidget *parent)
 {
     s = new QGraphicsScene();
@@ -24,6 +26,10 @@ Game::Game(QWidget *parent)
     s->setSceneRect(0,0,w,h);
 
     item->setPos(width()/2, height()/2);
+
+    //new scoreboard
+    score = new Score();
+    s->addItem(score);
     show();
 }
 

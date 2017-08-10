@@ -28,13 +28,15 @@ SOURCES += \
     player.cpp \
     fruit.cpp \
     score.cpp \
-    game.cpp
+    game.cpp \
+    body.cpp
 
 HEADERS += \
     player.h \
     fruit.h \
     score.h \
-    game.h
+    game.h \
+    body.h
 
 FORMS +=
 
