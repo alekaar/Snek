@@ -1,6 +1,7 @@
 #include "game.h"
 
 Score *score;
+Fruit *fruit;
 
 Game::Game(QWidget *parent)
 {

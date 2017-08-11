@@ -19,7 +19,7 @@ public:
 
     QGraphicsScene *s;
     Player *item;
-    Fruit *fruit;
+
 private:
     int w = 800;
     int h = 600;
